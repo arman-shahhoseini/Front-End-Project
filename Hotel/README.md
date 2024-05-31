@@ -18,7 +18,7 @@ Login page with sign-up and login forms
 To run this project locally, follow these steps:
 Clone the repository:
 bash
-git clone https://github.com/arman-shahhoseini/hotel-booking-website.git
+git clone https://github.com/arman-shahhoseini/Front-End-Project/tree/master/Hotel
 
 Navigate to the project directory:
 bash
