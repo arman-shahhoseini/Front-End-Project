@@ -1,0 +1,412 @@
+/* main page */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+}
+
+main {
+    flex-grow: 1;
+    margin-bottom: 100px; 
+}
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-top {
+    background-color: #222831;
+}
+
+.nav-top ul li {
+    float: right;
+    position: relative;
+}
+
+.nav-top ul li a {
+    padding: 30px;
+    display: block;
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+.nav-top ul li a:hover {
+    background-color: #31363F;
+    color: #76ABAE;
+}
+
+.search-box {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.search-box button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-box button img {
+    width: 24px; 
+    height: 24px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transform: none;
+}
+
+.image-logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-logo:hover {
+    transform: scale(1.2);
+}
+
+.logo a:hover .image-logo::after {
+    content: "Click to go to the home page";
+    position: absolute;
+    top: 60px;
+    left: 0;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Jost', sans-serif;
+    white-space: nowrap;
+}
+
+.logo-text {
+    color: #CDF5FD;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo-text2{
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #00A9FF;
+}
+
+
+
+.clear-fix:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+/* ----showcase---- */
+.showcase {
+    background: url(../Images/main-page/showcase.jpg) no-repeat center center/cover;
+    height: 800px;
+    position: relative;
+    padding-bottom: 50px; 
+}
+.showcase-content {
+    text-align: center;
+    text-decoration: none;
+}
+
+.showcase-content h1 {
+    margin: 0;
+    padding-top: 20px;
+    color: #1F2544;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 45px;
+}
+
+.showcase-content h1 span {
+    text-decoration: none;
+}
+
+.text-primary {
+    color: #005B41;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.booked {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eee;
+    background-color: #3C5B6F;
+    padding: 8px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 25px;
+}
+.booked:hover {
+    color: #4F6F52 ;
+    background-color: #E8DFCA;
+}
+
+/* -----destinations-usa picture----- */
+.destinations-usa {
+    background: url(../Images/main-page/felixmittermeier.jpg) no-repeat center center/cover;
+    height: max-content;
+    padding: 20px;
+    text-align: center;
+    font-family: "Dosis", sans-serif;
+    font-size: 30px;
+    color: #DFD0B8;
+}
+
+.destinations-usa h3 {
+    padding-bottom: 50px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 500px;
+    position: relative;
+}
+
+.image-left, .image-right {
+    width: 45%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-left {
+    background: url(../Images/main-page/city_lasvegas.jpg) no-repeat center center/cover;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    top: 50px;
+    right: 15px;
+}
+
+.image-right {
+    background: url(../Images/main-page/city_newyork.jpg) no-repeat center center/cover;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    top: 50px;
+}
+
+.image-left h4, .image-right h4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background-color: rgba(205, 232, 229, 0.8);
+    color: #4D869C;
+    font-size: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.image-left:hover, .image-right:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.image-left:hover h4, .image-right:hover h4 {
+    background-color: rgba(205, 232, 229, 1);
+}
+
+/* ----footer-section---- */
+.footer-section {
+    position: relative;
+    padding-bottom: 100px; 
+}
+
+.footer-container {
+    background: url('../Images/main-page/felixmittermeier.jpg') no-repeat center center/cover;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98.7vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+}
+
+.footer-container h3 {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    margin: 0 30px;
+    font-size: 2rem;
+    text-shadow:#1F2544;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+.icon-contact {
+    display: flex;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(1, 31, 49, 0.8);
+}
+
+.social-icon::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover::before {
+    opacity: 1;
+}
+
+.icon-instagram {
+    background-image: url('../Images/social-icon/icon-instagram.png');
+}
+
+.icon-telegram {
+    background-image: url('../Images/social-icon/icon-telegram.png');
+}
+
+.icon-github {
+    background-image: url('../Images/social-icon/icon-github.png');
+}
+
+/* about page */
+.container {
+    height: 1000px;
+    padding: 70px;
+    background: url(../Images/about-page/bg-ourloc.jpg) no-repeat center center/cover;
+}
+  
+.write-about {
+    background-color: #FFF5E0;
+    padding: 20px;
+    border: 1px solid #FFF5E0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 70px 0;
+}
+.write-about h2 {
+    text-align: center;
+    font-family: "LXGW WenKai Mono TC", monospace;
+    font-weight: bolder;
+}
+
+.write-about p{
+    text-align: center;
+    line-height: 2;
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.location-about {
+    text-align: center;
+    padding: 30px;
+    background: url(../Images/about-page/bg_about.jpg) no-repeat center center/cover;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 30px;
+    height: 500px;
+}
+  
+  .image-container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+
+  }
+  
+  .location {
+    position: relative;
+    width: 150px;
+    height: 150px; 
+    transition: transform 0.3s;
+    margin: 10px; 
+}
+  
+  .location img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 20px;
+}
+  
+  .location:hover {
+    transform: scale(1.1);
+  }
+  
+  .location:hover .location-name {
+    font-size: 1.2em;
+  }
+
