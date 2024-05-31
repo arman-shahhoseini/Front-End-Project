@@ -31,6 +31,14 @@ The showcase section encourages users to book hotels.
 The about page provides information about the hotel and its locations.
 The login page allows users to sign up or log in to the website.
 
+
+# 🎶 image of project :
+<img src="https://i.ibb.co/x6hXLB9/Shot-0006.png" alt="Hotel main page image" width="400" height="300"/> 
+<img src="https://i.ibb.co/mNjbYNk/Shot-0008.png" alt="Hotel Login page image" width="400" height="300"/> 
+<img src="https://i.ibb.co/9HLWX32/Shot-0009.png" alt="Hotel About page image" width="400" height="300"/> 
+ClICK ON IMAGE FOR BETTER EXPERIENCE 👆
+
+
 # Contact
 For any questions or feedback, please contact the project owner at armanrexical@gmail.com.
  [![Linkedin Badge](https://img.shields.io/badge/-ArmanShahhoseini-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/arman-shahhoseini-4447152a0/)](https://www.linkedin.com/in/arman-shahhoseini-4447152a0)
