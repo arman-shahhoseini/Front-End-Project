@@ -33,9 +33,9 @@ The login page allows users to sign up or log in to the website.
 
 
 # 🎶 image of project :
-<img src="https://i.ibb.co/x6hXLB9/Shot-0006.png" alt="Hotel main page image" width="400" height="300"/> 
-<img src="https://i.ibb.co/mNjbYNk/Shot-0008.png" alt="Hotel Login page image" width="400" height="300"/> 
-<img src="https://i.ibb.co/9HLWX32/Shot-0009.png" alt="Hotel About page image" width="400" height="300"/> 
+<img src="https://i.ibb.co/x6hXLB9/Shot-0006.png" alt="Hotel main page image" width="600" height="300"/> 
+<img src="https://i.ibb.co/mNjbYNk/Shot-0008.png" alt="Hotel Login page image" width="600" height="300"/> 
+<img src="https://i.ibb.co/9HLWX32/Shot-0009.png" alt="Hotel About page image" width="600" height="300"/> 
 ClICK ON IMAGE FOR BETTER EXPERIENCE 👆
 
 
