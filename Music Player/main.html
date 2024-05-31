@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="background">
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="player">
+        <div class="top"></div>
+
+        <div class="center">
+            <div class="album-glow"></div>
+            <img class="album" src="https://i1.sndcdn.com/artworks-njTPM878ZvX0YZXd-eetgtw-t500x500.jpg">
+          </div>
+          
+          <div class="song-info">
+            <div class="song-title">Ajab</div>
+            <div class="artist-name">Amir Tataloo</div>
+          </div>
+
+        <div class="slider">
+            <div class="time">
+                <div>00:00</div>
+                <div>8:33</div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="big">
+                <div class="inner_button_big">
+                    <img style="height: 15px; transform: scale(-1);" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDQ4IDQ0OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ4IDQ0ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48cGF0aCBkPSJNNDM5Ljg0LDIxMC4wNDJsLTI1Ni0xNDRjLTQuOTI4LTIuNzUyLTExLjAwOC0yLjcyLTE1LjkwNCwwLjEyOFMxNjAsNzQuMjk4LDE2MCw3OS45OTR2NjIuNTkyTDIzLjg0LDY2LjA0MiAgYy00Ljk2LTIuNzg0LTExLjAwOC0yLjcyLTE1LjkzNiwwLjEyOEMzLjAwOCw2OS4wNSwwLDc0LjI5OCwwLDc5Ljk5NHYyODhjMCw1LjY5NiwzLjAwOCwxMC45NDQsNy45MDQsMTMuODI0ICBjMi40OTYsMS40NCw1LjMxMiwyLjE3Niw4LjA5NiwyLjE3NmMyLjY4OCwwLDUuNDA4LTAuNjcyLDcuODQtMi4wNDhMMTYwLDMwNS40MDJ2NjIuNTkyYzAsNS42OTYsMy4wNCwxMC45NDQsNy45MzYsMTMuODI0ICBzMTAuOTc2LDIuOTEyLDE1LjkwNCwwLjEyOGwyNTYtMTQ0YzUuMDI0LTIuODQ4LDguMTYtOC4xNiw4LjE2LTEzLjk1MlM0NDQuODY0LDIxMi44OSw0MzkuODQsMjEwLjA0MnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6Izg0ODc4QSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48L2c+IDwvc3ZnPg==">
+                </div>
+            </button>
+            <button class="big_play_pause" id="play-button">
+                <div class="playpause">
+                    <img style="height: 15px;" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzIwLjAwMSAzMjAuMDAxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMjAuMDAxIDMyMC4wMDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+PGc+PHBhdGggZD0iTTI5NS44NCwxNDYuMDQ5bC0yNTYtMTQ0Yy00Ljk2LTIuNzg0LTExLjAwOC0yLjcyLTE1LjkwNCwwLjEyOEMxOS4wMDgsNS4wNTcsMTYsMTAuMzA1LDE2LDE2LjAwMXYyODggIGMwLDUuNjk2LDMuMDA4LDEwLjk0NCw3LjkzNiwxMy44MjRjMi40OTYsMS40NCw1LjI4LDIuMTc2LDguMDY0LDIuMTc2YzIuNjg4LDAsNS40MDgtMC42NzIsNy44NC0yLjA0OGwyNTYtMTQ0ICBjNS4wMjQtMi44NDgsOC4xNi04LjE2LDguMTYtMTMuOTUyUzMwMC44NjQsMTQ4Ljg5NywyOTUuODQsMTQ2LjA0OXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6I0ZGRkZGRiIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48L2c+IDwvc3ZnPg==">
+                </div>
+            </button>
+            <button class="big">
+                <div class="inner_button_big">
+                    <img style="height: 15px;" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDQ4IDQ0OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ4IDQ0ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48cGF0aCBkPSJNNDM5Ljg0LDIxMC4wNDJsLTI1Ni0xNDRjLTQuOTI4LTIuNzUyLTExLjAwOC0yLjcyLTE1LjkwNCwwLjEyOFMxNjAsNzQuMjk4LDE2MCw3OS45OTR2NjIuNTkyTDIzLjg0LDY2LjA0MiAgYy00Ljk2LTIuNzg0LTExLjAwOC0yLjcyLTE1LjkzNiwwLjEyOEMzLjAwOCw2OS4wNSwwLDc0LjI5OCwwLDc5Ljk5NHYyODhjMCw1LjY5NiwzLjAwOCwxMC45NDQsNy45MDQsMTMuODI0ICBjMi40OTYsMS40NCw1LjMxMiwyLjE3Niw4LjA5NiwyLjE3NmMyLjY4OCwwLDUuNDA4LTAuNjcyLDcuODQtMi4wNDhMMTYwLDMwNS40MDJ2NjIuNTkyYzAsNS42OTYsMy4wNCwxMC45NDQsNy45MzYsMTMuODI0ICBzMTAuOTc2LDIuOTEyLDE1LjkwNCwwLjEyOGwyNTYtMTQ0YzUuMDI0LTIuODQ4LDguMTYtOC4xNiw4LjE2LTEzLjk1MlM0NDQuODY0LDIxMi44OSw0MzkuODQsMjEwLjA0MnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6Izg0ODc4QSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48L2c+IDwvc3ZnPg==">
+                </div>
+            </button>
+        </div>
+
+        <div class="volume-control">
+            <img src="images/speaker_image.png" alt="Volume" height="40px">
+            <input type="range" class="volume-slider" min="0" max="100" value="100">
+        </div>
+
+        <div class="lyrics-box">
+            <h2>Lyrics</h2>
+            <div class="lyrics-content">
+                <p class="lyric-line">ما همیشه یه چند ثانیه دیر رسیدیم</p>
+                <p class="lyric-line">گشنه ولی یجور دیدیمون</p>
+                <p class="lyric-line">که انگار سیر سیریم</p>
+                <p class="lyric-line">ما همیشه سر پایین ولی پیرِ پیریم</p>
+                <p class="lyric-line">توو جوونی پَسی خوری</p>
+                <p class="lyric-line">وسط بگیر بگیری</p>
+                <p class="lyric-line">آره ما پس مونده های</p>
+                <p class="lyric-line">همون عشق و حالای دیر به دیریم</p>
+                <p class="lyric-line">آره ما زامبی بودیم زیر گریم</p>
+                <p class="lyric-line">یادمون دادن همش همدیگه رو زیر بگیریم</p>
+                <p class="lyric-line">آ ، سوخته هامون یخ زده</p>
+                <p class="lyric-line">یخ زده هامون سوختن و</p>
+                <p class="lyric-line">یاد گرفتیم زخمای خودمونو دوختنو</p>
+                <p class="lyric-line">آدما همه هَول رو مخ و توو کون نرو</p>
+                <p class="lyric-line">انقده سنگینه حتی یادت میره خوندنو</p>
+                <p class="lyric-line">برزخ ما رو ریپیته روبرومو مِه گرفت</p>
+                <p class="lyric-line">کاری نداره پُر شدی عین خودم بترک</p>
+                <p class="lyric-line">عین خودم بگیر همه زندگیو به تخمت</p>
+                <p class="lyric-line">بزن کوچه علی چپ بشین به فیلم به تخمه</p>
+                <p class="lyric-line">عین خودم لش و لِی عین خودت بی حسم</p>
+                <p class="lyric-line">منم عین خودت قفلی حتی عین خودت نشستم</p>
+                <p class="lyric-line">چشم غُره هام به دیوار به دنیا یه نیش خند</p>
+                <p class="lyric-line">میزنم و میگم میشه این فرمونو بدیش من</p>
+                <p class="lyric-line">ما بد نبودیم بلد بودیم دنیا ما رو نمیخورد</p>
+                <p class="lyric-line">ما تُنگ بودیم اگه دریا بودیم که ماهیمون نمیمُرد</p>
+                <p class="lyric-line">ما ساده بودیم نبودیم که روحمو نمیبرد</p>
+                <p class="lyric-line">بِبره بچرخونه بعد بیای بگی مرد</p>
+                <p class="lyric-line">همش اشکا میخواد بیاد پایین دور و برو میپام</p>
+                <p class="lyric-line"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="music-container">
+        <h1>Last Music</h1>
+        <div class="music-container">
+            <h1>Last Music</h1>
+            <div class="cover-images">
+                <button class="button">
+                <img src="https://cdns-images.dzcdn.net/images/cover/56c5caa4f517a358b6642073df7d9761/350x350.jpg" alt="Cover Image 1" class="cover-image">
+                </button>
+                <button class="button">
+                <img src="https://cdns-images.dzcdn.net/images/cover/7dfd1bec883c0dbd040fa6b5bfe53ed6/500x500.jpg" alt="Cover Image 2" class="cover-image">
+                </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+            <ul class="music-list">
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSucO6ztbT0eq2E3eeY6qQrEB_SeCknO5sXckuUFH7ELQ&s" alt="Cover 1">
+                    <div class="music-info">
+                        <h4>Amir Tataloo</h4>
+                        <p>Amir Tataloo</p>
+                    </div>
+                    <button class="play-btn">
+                        <img src="images/preview.png" alt="Play">
+                    </button>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2HDgHvC-xOFNf-3rNa3UCeBQAYLLe6ILQeTLLw9EWg&s" alt="Cover 2">
+                    <div class="music-info">
+                        <h4>Didi</h4>
+                        <p>Amir Tataloo</p>
+                    </div>
+                    <button class="play-btn">
+                        <img src="images/preview.png" alt="Play">
+                    </button>
+                </li>
+                <li>
+                    <img src="https://artwork.anghcdn.co/webp/?id=137139761&size=320" alt="Cover 3">
+                    <div class="music-info">
+                        <h4>Man Bahat Ghahram</h4>
+                        <p>Amir Tataloo</p>
+                    </div>
+                    <button class="play-btn">
+                        <img src="images/preview.png" alt="Play">
+                    </button>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5rZrp83kn5_mN0ctV_pjtwLhbCCZIhMaufoiS-Gl5jw&s" alt="Cover 4">
+                    <div class="music-info">
+                        <h4>Nesfe Shab</h4>
+                        <p>Amir Tataloo</p>
+                    </div>
+                    <button class="play-btn">
+                        <img src="images/preview.png" alt="Play">
+                    </button>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnygF2DFADrsvx76aeKhm1NgX29XcUrjr6JWnc3lXakA&s" alt="Cover 5">
+                    <div class="music-info">
+                        <h4>Delam Mikhad</h4>
+                        <p>Amir Tataloo</p>
+                    </div>
+                    <button class="play-btn">
+                        <img src="images/preview.png" alt="Play">
+                    </button>
+                </li>
+                <li>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsDm2Q8ppvvu1HQGE_T3CDgNXkM1d0U-inmnvHq9j9vA&s" alt="Cover 6">
+                    <div class="music-info">
+                        <h4>Ajab2</h4>
+                        <p>Amir Tataloo</p>
+                    </div>
+                    <button class="play-btn">
+                        <img src="images/preview.png" alt="Play">
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-controls">
+            <button class="shuffle-btn"><i class="fas fa-random"></i></button>
+            <button class="repeat-btn"><i class="fas fa-repeat"></i></button>
+            <button class="queue-btn"><i class="fas fa-list"></i></button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
