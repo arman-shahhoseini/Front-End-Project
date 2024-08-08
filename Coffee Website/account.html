@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Café Paradise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Café Paradise</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="cart.html" class="cart-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="main-title">Your Account</h1>
+        <p class="main-description">Manage your account, view your orders, and update your preferences.</p>
+
+        <div class="account-container">
+            <div class="account-tabs">
+                <button class="tab-btn active" data-tab="login"><i class="fas fa-sign-in-alt"></i> Login</button>
+                <button class="tab-btn" data-tab="register"><i class="fas fa-user-plus"></i> Register</button>
+                <button class="tab-btn" data-tab="profile"><i class="fas fa-user-circle"></i> Profile</button>
+                <button class="tab-btn" data-tab="orders"><i class="fas fa-shopping-bag"></i> Orders</button>
+                <button class="tab-btn" data-tab="payment"><i class="fas fa-credit-card"></i> Payment Methods</button>
+            </div>
+
+            <div class="tab-content">
+                <div id="login" class="tab-pane active">
+                    <h2>Login</h2>
+                    <form id="login-form">
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit">Login</button>
+                    </form>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <div id="register" class="tab-pane">
+                    <h2>Register</h2>
+                    <form id="register-form">
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email" required>
+                        <input type="password" placeholder="Password" required>
+                        <input type="password" placeholder="Confirm Password" required>
+                        <button type="submit">Register</button>
+                    </form>
+                </div>
+
+                <div id="profile" class="tab-pane">
+                    <h2>Your Profile</h2>
+                    <form id="profile-form">
+                        <input type="text" placeholder="Full Name" value="John Doe">
+                        <input type="email" placeholder="Email" value="john@example.com">
+                        <input type="tel" placeholder="Phone Number" value="+1234567890">
+                        <textarea placeholder="Address">123 Coffee Street, Bean City, 12345</textarea>
+                        <button type="submit">Update Profile</button>
+                    </form>
+                </div>
+
+                <div id="orders" class="tab-pane">
+                    <h2>Order History</h2>
+                    <div class="order-list">
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span>Order #12345</span>
+                                <span>Date: 2024-08-05</span>
+                                <span>Total: $25.99</span>
+                            </div>
+                            <div class="order-details">
+                                <p>1x Cappuccino</p>
+                                <p>2x Croissant</p>
+                                <p>1x Iced Latte</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="payment" class="tab-pane">
+                    <h2>Payment Methods</h2>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <img src="https://i.pinimg.com/564x/0f/86/07/0f86075d899c9069b235c23b792d70ef.jpg" alt="Visa">
+                            <span>**** **** **** 1234</span>
+                            <button class="remove-btn">Remove</button>
+                        </div>
+                    </div>
+                    <button id="add-payment-btn">Add New Payment Method</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/account.js"></script>
+</body>
+</html>

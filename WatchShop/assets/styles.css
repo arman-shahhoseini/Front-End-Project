@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+@font-face {
+    font-family: 'Vazir';
+    src: url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/Vazir-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --luxury-gold: #D4AF37;
+    --luxury-silver: #C0C0C0;
+    --luxury-bronze: #CD7F32;
+    --dark-primary: #1E1E1E;
+    --dark-secondary: #2D2D2D;
+    --light-primary: #F5F5F5;
+    --light-secondary: #E0E0E0;
+}
+
+body {
+    font-family: 'Vazir', 'Roboto', sans-serif;
+    background-color: var(--bg-primary, var(--light-primary));
+    color: var(--text-primary, var(--dark-primary));
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark {
+    --bg-primary: var(--dark-primary);
+    --bg-secondary: var(--dark-secondary);
+    --text-primary: var(--light-primary);
+}
+
+.bg-light-secondary {
+    background-color: var(--bg-secondary, var(--light-secondary));
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--luxury-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 100%;
+}
+
+.nav-item.active a {
+    color: var(--luxury-gold);
+}
+
+.luxury-gradient {
+    background: linear-gradient(45deg, var(--luxury-gold), var(--luxury-silver));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-3d {
+    background: linear-gradient(45deg, var(--luxury-gold), var(--luxury-bronze));
+    border: none;
+    color: var(--dark-primary);
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+.btn-3d:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.luxury-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    transition: all 0.3s ease;
+}
+
+.luxury-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px 0 rgba(0,0,0,0.5);
+}
+
+.footer-bg {
+    background: linear-gradient(135deg, rgba(30,30,30,0.95) 0%, rgba(60,60,60,0.95) 100%),
+                url('path-to-your-luxury-background-image.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.footer-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--luxury-gold), var(--luxury-silver), var(--luxury-bronze));
+}
+
+input[type="email"] {
+    background-color: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid var(--luxury-gold);
+}
+
+input[type="email"]::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+#themeToggle i {
+    transition: color 0.3s;
+}
+
+.dark #themeToggle i {
+    color: var(--luxury-gold);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--luxury-gold), var(--luxury-bronze));
+    border-radius: 6px;
+    border: 3px solid var(--dark-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, var(--luxury-bronze), var(--luxury-gold));
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--luxury-gold) var(--dark-secondary);
+}
+
+/* Smooth Scrolling for the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    h1, h2, h3 {
+        font-size: 90%;
+    }
+
+    .btn-3d {
+        padding: 8px 16px;
+    }
+
+    .luxury-box {
+        padding: 15px;
+    }
+
+    .footer-bg {
+        text-align: center;
+    }
+
+    #menu {
+        background-color: var(--bg-secondary, var(--light-secondary));
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+}

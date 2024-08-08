@@ -1,0 +1,310 @@
+/* ---------------------------------------------- main page ----------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    flex-grow: 1;
+    margin-bottom: 100px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-top {
+    background-image: linear-gradient(to right, #FFFBF5 , #EEEDED, #FFFBF5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-top ul li {
+    margin-right: 10px;
+}
+
+.nav-top ul li a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-top ul li a:hover{
+    background-color: #E5E1DA;
+    
+}
+
+.login-button {
+    padding: 20px;
+}
+
+.login-button a {
+    color: #000;
+    background-color: #eee;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    
+}
+
+.login-button a:hover{
+    background-color: #E5E1DA;
+}
+
+
+/* ------------------------------------------------- image-slider ----------------------------------------------*/
+.slider {
+    margin-left: auto;
+    margin-right: auto;
+    width: auto; 
+    height: 600px; 
+    overflow: hidden; 
+    position: relative;
+    background-color: #EEE;
+  }
+  
+  .slider-container{
+    color: #000;
+    padding-left: 60px;
+    padding-top: 100px;
+  }
+
+  .slider-container h2 {
+    font-size: 80px;
+    width: 400px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    padding: 0;
+    margin: 0;
+
+  }
+
+  .slider-container p {
+    text-align: justify;
+    line-height: 1.5;
+    list-style: circle;
+    width: 400px;
+    font-size: 20px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .shop-button{
+    padding-left: 65px;
+    padding-top: 30px;
+  }
+
+  .slider-container a {
+    color: #4D869C;
+    background-color: #FBF9F1;
+    padding: 10px 50px;
+    border-radius: 20px;
+    font-size: 20px;
+    border: 1px solid #000;
+  }
+
+  .slider-container a:hover{
+    background-color: #EEF7FF;
+  }
+
+  .slider img {
+    position: absolute;
+    top: 60px;
+    left: 500px;
+    width: 60%;
+    height: 80%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slider img.active {
+    opacity: 1;
+  }
+
+/* ----------------------------------------------------product container ----------------------------------------------*/
+
+.product-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 300px; 
+    height: 400px; 
+    margin: 0 30px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; 
+    overflow: hidden;
+}
+
+.cover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-container:hover .thumbnail {
+    animation: slideImages 10s infinite;
+}
+
+@keyframes slideImages {
+    0% {
+        opacity: 0;
+    }
+    16.67% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    66.67% {
+        opacity: 0;
+    }
+    83.33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.thumbnail:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.thumbnail:nth-child(2) {
+    animation-delay: 2.5s;
+}
+
+.thumbnail:nth-child(3) {
+    animation-delay: 5s;
+}
+
+.product-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.product-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.product-price {
+    color: #DC5F00;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn {
+    background-color: #DC5F00;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #CF0A0A;
+    color: #fff;
+}
+
+
+/* ---------------------------------------------------- Footer ----------------------------------------------*/
+
+footer {
+    background: linear-gradient(to right, #929AAB, #393E46, #929AAB); 
+    padding: 1px;
+}
+
+.footer-container {
+    color: #EEE;
+    text-align: center;
+    font-family: "LXGW WenKai Mono TC", monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-weight: bolder;
+}
