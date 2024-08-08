@@ -16,7 +16,7 @@ This repository contains a variety of front-end projects showcasing my skills in
 
 ## 📞 Created By
 
-[Your Name](https://github.com/arman-shahhoseini)  
+[Arman Shahhoseini](https://github.com/arman-shahhoseini)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arman-shahhoseini-4447152a0) 
 
