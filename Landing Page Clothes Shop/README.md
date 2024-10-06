@@ -23,3 +23,6 @@ To get started with the Stylish Clothing Store project, follow these steps:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/arman-shahhoseini/Front-End-Project/tree/63620de61ef4d06e4be951ade1b5c3d0709ee796/Landing%20Page%20Clothes%20Shop
+
+## Contact :
+[![Email](https://img.shields.io/badge/Email-%23D14836.svg?logo=gmail&logoColor=white)](mailto:shahhoseiniarman@gmail.com)
