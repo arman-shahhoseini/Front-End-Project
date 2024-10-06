@@ -1,0 +1,709 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #111;
+    padding: 20px 0;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s, transform 0.3s; /* Add transitions for hover effects */
+}
+
+nav ul li a:hover {
+    color: #d6ff00; 
+    transform: translateY(-3px); 
+}
+.contact-btn {
+    background-color: #d6ff00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.contact-btn:hover {
+    background-color: #fff;
+}
+.hero {
+    background-image: url('images/background-pattern.png'); 
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    position: relative;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.hero-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+}
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #d6ff00;
+}
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: #fff;
+}
+.hero-buttons .btn {
+    background-color: #d6ff00;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin: 10px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+.hero-buttons .btn:hover {
+    background-color: #fff;
+}
+.tags {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.tags span {
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #d6ff00;
+}
+footer {
+    background-image: radial-gradient(circle, #000, #d6ff00, #000); /* Updated for a circular gradient */
+    padding: 20px 0;
+    margin-top: 50px;
+    text-align: center; 
+}
+
+.logo {
+    color: #d6ff00;
+}
+/* General styles for the services section */
+.services {
+    padding: 50px 20px;
+    color: #d6ff00;
+    position: relative;
+    overflow: hidden;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.services p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/* Container for service cards */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+/* Styles for each service card */
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px; /* Fixed width for uniformity */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    animation: popIn 0.6s ease forwards; /* Add pop-in animation */
+}
+
+.service-card h3 {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.service-card p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+/* Styles for the list of features */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-card ul li {
+    margin-bottom: 10px;
+    color: #d6ff00;
+}
+
+/* Button styles */
+.service-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #d6ff00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+/* Hover effects for service cards */
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background-color: #444; /* Change background on hover */
+}
+
+/* Animated hover effect for button */
+.service-card .btn:hover {
+    background-color: #fff;
+    color: #222; /* Change text color on hover */
+}
+
+/* Styles for the service icons */
+.service-icon {
+    width: 80px; /* Fixed width for icons */
+    height: 80px; /* Fixed height for icons */
+    margin-bottom: 15px;
+}
+
+.service-icon img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 80px; /* Limit the maximum width */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column; /* Stack cards on small screens */
+        align-items: center; /* Center the cards */
+    }
+
+    .service-card {
+        width: 90%; /* Full width on small screens */
+        margin: 10px 0; /* Margin between cards */
+    }
+}
+
+.background-animation {
+    position: fixed; /* Fixed position to cover entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send it behind other content */
+    animation: backgroundAnimation 10s linear infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: radial-gradient(circle, rgba(214, 255, 0, 0.1), rgba(0, 0, 0, 0.5));
+    }
+    50% {
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.5), rgba(214, 255, 0, 0.1));
+    }
+    100% {
+        background: radial-gradient(circle, rgba(214, 255, 0, 0.1), rgba(0, 0, 0, 0.5));
+    }
+}
+/* Particle animation */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(214, 255, 0, 0.7);
+    opacity: 0.7;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+/* Add pop-in animation for service cards */
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Advantages Section */
+.advantage-sec {
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-sec h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #d6ff00;
+}
+
+.advantage-sec p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    
+}
+
+.advantages-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    border-radius: 15px;
+}
+
+.advantage-card {
+    background-color: #444;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
+    text-align: left;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.advantage-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.9);
+    border-color: #d4ff00;
+}
+
+.advantage-card h3 {
+    color: #d4ff00;
+    margin-bottom: 8px;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.icon {
+    transition: transform 0.3s ease;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover img {
+    transform: scale(1.1);
+}
+
+.advantage-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.advantage-card:hover::after {
+    opacity: 1;
+}
+
+/* General styles for the services section */
+.pricing-plans {
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-plans h2 {
+    color: #d6ff00;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.pricing-plans p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Increased gap for better spacing */
+}
+
+.card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem; /* More padding for a spacious look */
+    width: 18rem; /* Increased card width */
+    height: auto;
+    background-color: rgb(122, 48, 143);
+    background-image: radial-gradient(circle at 0% 0%, rgba(37, 7, 44, 0.9) 15%, rgba(0, 0, 0, 0) 75%),
+        radial-gradient(circle at 100% 100%, rgba(25, 2, 31, 0.9) 15%, rgba(0, 0, 0, 0) 150%),
+        linear-gradient(135deg, rgba(24, 8, 28, 0) 0%, rgb(122, 48, 143) 50%, rgba(24, 8, 28, 0) 100%);
+    border-radius: 0.75rem; /* Rounded corners */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling effect */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(122, 48, 143);
+    background-image: linear-gradient(0deg, rgba(118, 42, 180, 1) 0%, rgb(199, 95, 228) 75%);
+    border-radius: 9999px;
+    box-shadow: 0 1px 5px 3px rgb(199, 95, 228), 0 0 30px 5px rgb(199, 95, 228);
+}
+
+.card .title {
+    font-size: 1.25rem; /* Increased title font size */
+    color: #ffeb3b; /* Gold color for the title */
+    font-weight: 600;
+}
+
+.card .pricing {
+    font-size: 2rem; /* Increased pricing font size */
+    color: #ffeb3b; /* Gold color for pricing */
+    font-weight: 600;
+}
+
+.card .pricing .pricing-time,
+.card .sub-title {
+    font-size: 0.85rem; /* Slightly larger font size */
+    color: rgb(184, 132, 199);
+    font-weight: 500;
+}
+
+.card .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Increased gap between list items */
+    font-size: 0.85rem; /* Slightly larger font size */
+    color: white;
+    font-weight: 500;
+    list-style: none;
+}
+
+.card .list .list-item .check {
+    margin-right: 0.5rem; /* Increased spacing */
+    font-size: 1rem;
+    color: rgb(199, 95, 228);
+    font-weight: 900;
+}
+
+.card .button {
+    cursor: pointer;
+    position: relative;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem; /* More padding for the button */
+    width: 100%;
+    background-color: rgb(122, 48, 143);
+    font-size: 0.85rem; /* Slightly larger button text */
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 2px 1px rgb(122, 48, 143);
+    transition: all 0.3s ease-in-out;
+}
+
+.card .button:hover {
+    background-color: rgba(199, 95, 228, 0.9); /* Change button color on hover */
+    box-shadow: 0px 0px 10px 0 rgb(199, 95, 228);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .plans-container {
+        flex-direction: column; /* Stack cards on smaller screens */
+        align-items: center;
+    }
+
+    .card {
+        width: 90%; /* Responsive card width */
+    }
+}
+
+/* From Uiverse.io by ahmed150up2 */ 
+.footer-card {
+    display: flex;
+    height: 70px;
+    width: 270px;
+    margin-left: 600px;
+  }
+  
+  .footer-card svg {
+    position: absolute;
+    display: flex;
+    width: 60%;
+    height: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    opacity: 1;
+    transition: opacity 0.25s;
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  .footer-card .social-link1,.footer-card .social-link2,.footer-card .social-link3,.footer-card .social-link4 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    color: whitesmoke;
+    font-size: 24px;
+    text-decoration: none;
+    transition: 0.25s;
+    border-radius: 50px;
+  }
+  
+  .footer-card svg {
+    transform: scale(1);
+  }
+  
+  .footer-card .social-link1:hover {
+    background-color: #1a1e22;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  .footer-card .social-link2:hover {
+    background-color: #0a66c2;
+    animation: bounce_613 0.4s linear;
+  }
+  
+  @keyframes bounce_613 {
+    40% {
+      transform: scale(1.4);
+    }
+  
+    60% {
+      transform: scale(0.8);
+    }
+  
+    80% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+    nav {
+        padding: 0 20px;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .tags {
+        flex-direction: column; /* Stack tags */
+    }
+}
+
+@media (max-width: 992px) {
+    .services-container {
+        flex-direction: column; /* Stack cards on medium screens */
+        align-items: center; /* Center the cards */
+    }
+    .service-card {
+        width: 90%; /* Full width on medium screens */
+        margin: 10px 0; /* Margin between cards */
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack nav items */
+        padding: 0 10px;
+    }
+    nav ul {
+        flex-direction: column; /* Stack menu items */
+        gap: 10px;
+    }
+    .hero {
+        padding: 80px 0; /* Adjust hero padding */
+    }
+    .hero h1 {
+        font-size: 28px; /* Adjust hero heading size */
+    }
+    .hero p {
+        font-size: 14px; /* Adjust hero paragraph size */
+    }
+    .hero-buttons .btn {
+        padding: 10px 20px; /* Adjust button padding */
+    }
+}
+
+@media (max-width: 576px) {
+    header {
+        padding: 10px 0; /* Reduce header padding */
+    }
+    .contact-btn {
+        padding: 8px 15px; /* Adjust button padding */
+    }
+}
+
+/* Testimonials Section */
+.testimonials {
+    color: #d6ff00; /* Bright color for text */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.testimonial-card {
+    background-color: #333; /* Card background */
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.testimonial-card img {
+    width: 80px; /* Fixed size for images */
+    height: 80px;
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    color: #aaa; /* Light text for testimonials */
+}
+
+/* Call to Action Section */
+.call-to-action {
+    color: #d6ff00;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.call-to-action h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.call-to-action p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.call-to-action .btn {
+    background-color: #d6ff00;
+    color: #000;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.call-to-action .btn:hover {
+    background-color: #fff; /* Button hover effect */
+    color: #222;
+}
